@@ -12,7 +12,9 @@ export default function configureSxModule(sxModule) {
 		},
 		entry: {
 			defaultTextContainer: 'p'
-		}
+		},
+		showInsertionWidget: true,
+		showHighlightingWidget: true
 	});
 
 	// colspec
@@ -25,14 +27,6 @@ export default function configureSxModule(sxModule) {
 	// entry
 	//     The <entry> element defines a single cell in a table. Category: Table elements
 	configureProperties(sxModule, 'self::entry', {
-		contextualOperations: [
-			{ name: 'contextual-column-insert' },
-			{ name: 'contextual-column-after-insert' },
-			{ name: 'contextual-column-delete' },
-			{ name: 'contextual-row-insert' },
-			{ name: 'contextual-row-after-insert' },
-			{ name: 'contextual-row-delete' }
-		],
 		markupLabel: t('cell')
 	});
 	configureProperties(
@@ -53,8 +47,7 @@ export default function configureSxModule(sxModule) {
 	configureProperties(sxModule, 'self::table', {
 		contextualOperations: [
 			{ name: ':cals-table-insert-title' },
-			{ name: ':cals-table-insert-desc' },
-			{ name: 'cals-table-delete' }
+			{ name: ':cals-table-insert-desc' }
 		],
 		markupLabel: t('table figure'),
 		titleQuery: './title',
